@@ -55,7 +55,9 @@ function detectPosition() {
 
     let p = mapValue(x, 0, width, -1, 1);
     console.log(p);
-    panner.pan.rampTo(p, 0.1);
+    if (p <= 1 && p >=-1) {
+        panner.pan.rampTo(p, 0.1);
+    }
 
     window.requestAnimationFrame(detectPosition);
 }
